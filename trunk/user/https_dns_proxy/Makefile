@@ -17,7 +17,7 @@ config_test:
 	fi )
 
 configure:
-	mkdir -p $(SRC_NAME)/build
+        mkdir -p $(SRC_NAME)/build
         cd $(SRC_NAME)/build
         cmake -DCMAKE_TOOLCHAIN_FILE=../cross-mipsel-linux.cmake $(SRC_NAME)
         make
