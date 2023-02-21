@@ -2,6 +2,7 @@ SRC_NAME = https_dns_proxy-master
 THISDIR = $(shell pwd)
 
 all: extract_test config_test
+	cmake $(SRC_NAME)
 	$(MAKE) -C $(SRC_NAME)
 
 extract_test:
@@ -23,4 +24,4 @@ clean:
 	rm -f config_done
 
 romfs:
-	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/src/smartdns /usr/bin/smartdns
+	$(ROMFSINST) -p +x $(SRC_NAME)/https_dns_proxy /usr/bin/https_dns_proxy
