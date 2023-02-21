@@ -17,11 +17,16 @@ config_test:
 		touch config_done; \
 	fi )
 
+configure:
+	( mkdir -p $(SRC_NAME)/https_dns_proxy-master/build && cd $(SRC_NAME)/https_dns_proxy-master/build ; \
+		cmake \
+			-DCMAKE_TOOLCHAIN_FILE=../../cross-mipsel-linux.cmake \
+			. ; \
+	)
+
 clean:
-	if [ -f $(SRC_NAME)/Makefile ] ; then \
-		$(MAKE) -C $(SRC_NAME) clean ; \
-	fi ; \
+	rm -rf $(SRC_NAME)/https_dns_proxy-master/build
 	rm -f config_done
 
 romfs:
-	$(ROMFSINST) -p +x $(SRC_NAME)/https_dns_proxy /usr/bin/https_dns_proxy
+	$(ROMFSINST) -p +x $(SRC_NAME)/https_dns_proxy-master/build/https_dns_proxy /usr/bin/https_dns_proxy
