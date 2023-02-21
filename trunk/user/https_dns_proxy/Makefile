@@ -1,8 +1,7 @@
 SRC_NAME = https_dns_proxy-master
 THISDIR = $(shell pwd)
 
-all: extract_test config_test
-	cmake $(SRC_NAME)
+all: extract_test config_test 
 	$(MAKE) -C $(SRC_NAME)
 
 extract_test:
@@ -14,7 +13,7 @@ config_test:
 	( if [ -f ./config_done ]; then \
 		echo "the same configuration"; \
 	else \
-		touch config_done; \
+		make configure && touch config_done; \
 	fi )
 
 configure:
