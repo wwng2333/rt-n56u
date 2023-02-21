@@ -1,5 +1,7 @@
 SRC_NAME = https_dns_proxy-master
 THISDIR = $(shell pwd)
+CFLAGS   += -O2 -ffunction-sections -fdata-sections -fvisibility=hidden -D_LARGEFILE64_SOURCE -D_LFS64_LARGEFILE -Wno-implicit-fallthrough
+LDFLAGS  += -Wl,--gc-sections
 
 all: extract_test config_test 
 	$(MAKE) -C $(SRC_NAME)
