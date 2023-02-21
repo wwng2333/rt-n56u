@@ -17,15 +17,13 @@ config_test:
 	fi )
 
 configure:
-	( mkdir -p $(SRC_NAME)/https_dns_proxy-master/build && cd $(SRC_NAME)/https_dns_proxy-master/build ; \
-		cmake \
-			-DCMAKE_TOOLCHAIN_FILE=../../cross-mipsel-linux.cmake \
-			. ; \
-	)
+        mkdir -p $(SRC_NAME)/build
+        cd $(SRC_NAME)/build
+        cmake -DCMAKE_TOOLCHAIN_FILE=../cross-mipsel-linux.cmake ..
 
 clean:
-	rm -rf $(SRC_NAME)/https_dns_proxy-master/build
-	rm -f config_done
+        rm -rf $(SRC_NAME)/build
+        rm -f config_done
 
 romfs:
-	$(ROMFSINST) -p +x $(SRC_NAME)/https_dns_proxy-master/build/https_dns_proxy /usr/bin/https_dns_proxy
+        $(ROMFSINST) -p +x $(SRC_NAME)/build/https_dns_proxy /usr/bin/https_dns_proxy
