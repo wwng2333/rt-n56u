@@ -1,4 +1,4 @@
-SRC_NAME = nano-3.0
+SRC_NAME = nano-7.2
 SRC_URL = https://www.nano-editor.org/dist/v7/nano-7.2.tar.gz
 THISDIR = $(shell pwd)
 
