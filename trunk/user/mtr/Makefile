@@ -1,9 +1,9 @@
 #https://github.com/traviscross/mtr
-SRC_NAME = mtr-0.94
-SRC_URL = https://www.bitwizard.nl/mtr/files/mtr-0.94.tar.gz
+SRC_NAME = mtr-0.92
+SRC_URL = https://www.bitwizard.nl/mtr/files/mtr-0.92.tar.gz
 THISDIR = $(shell pwd)
 
-all: download_test extract_test config_test
+all: config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
 
 download_test:
