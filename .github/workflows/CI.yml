@@ -28,6 +28,8 @@ jobs:
         include:
           - build_variant: "mt7620"
             targets: "PSG1218"
+          - build_variant: "mt7621"
+            targets: "BELL-A-040W-Q"
     steps:
       - uses: actions/checkout@v3
       - name: Prepare environment
