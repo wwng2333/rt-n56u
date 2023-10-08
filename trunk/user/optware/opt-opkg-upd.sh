@@ -14,7 +14,7 @@ INSTALLER=/tmp/entware_installer.sh
 # check opkg installed
 if [ ! -f /opt/bin/opkg ] ; then
 	logger -t "${self_name}" "Installing entware opkg...."
-	wget -q http://bin.entware.net/mipselsf-k3.4/installer/generic.sh -O $INSTALLER
+	wget -q http://entware.cdn.csgo.ovh/mipselsf-k3.4/installer/generic.sh -O $INSTALLER
 	if [ $? -eq 0 ] ; then
 		logger -t "${self_name}" "SUCCESS!"
 	else
