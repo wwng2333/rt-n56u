@@ -4,5 +4,5 @@
 # BELL-A-040W-Q       # BELL-A-040W-Q              # MT7621  #
 ##################################################################
 
-CFLAGS += -DBOARD_BELL-A-040W-Q -DBOARD_MT7615_DBDC
+CFLAGS += -DBOARD_BELL-A-040W- -DBOARD_MT7615_DBDC
 BOARD_NUM_USB_PORTS=1
